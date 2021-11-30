@@ -4,14 +4,10 @@ metadata:
   name: guestingress
   annotations:
 spec:
-  ingressClassName: nginx
   rules:
-  - host:
-    http:
+  - http:
       paths:
-      - path: /myapp
-        backend:
-          service:
-            name: guestbook-ui
-            port:
-              number: 80
+        - path: /apple
+          backend:
+            serviceName: guestbook-ui
+            servicePort: 80
