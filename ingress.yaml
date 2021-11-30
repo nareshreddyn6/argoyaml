@@ -9,7 +9,8 @@ spec:
   - host:
     http:
       paths:
-      - path: /apple
+      - pathType: Prefix
+        path: "/apple"
         backend:
           service:
             name: guestbook-ui
