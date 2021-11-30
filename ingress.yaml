@@ -9,7 +9,7 @@ spec:
   - host:
     http:
       paths:
-      - path: "/"
+      - path: /myapp
         backend:
           service:
             name: guestbook-ui
