@@ -1,20 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  annotations: null
-  labels:
-    app.kubernetes.io/instance: guestbookapp
   name: hello-world
-  namespace: default
+  annotations:
 spec:
   ingressClassName: nginx
   rules:
-    - host: 
-      http:
-        paths:
-          - backend:
-              service:
-                name: guestbook-ui
-                port:
-                  number: 80
-            path: /
+  - host:
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: guestbook-ui
+            port:
+              number: 80
