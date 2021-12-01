@@ -9,7 +9,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /myapp
+      - path: /guestbook
         pathType: Prefix
         backend:
           service:
